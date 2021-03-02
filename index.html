@@ -2,45 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    
     <title>Event-Driven</title>
 </head>
 <body>
-    <table id="tbldata" style="border: black 1px solid;">
-        <thead style="border: black 1px solid;">
-            <tr>
-                <th>Invalid Input</th>
-            </tr>
-        </thead>
-        <tbody>
-
-
-        </tbody>
+    <table id="calendar">
 
     </table>
-    
-    <script src="js/my.js"></script>
-    
-    <script>
-        const btnSend = document.getElementById("btnSend");
-        btnSend.addEventListener('click', function(){
-            const form1 = document.getElementById('form1');
-            const elements = form1.elements;
-            let username = elements[0].value;
-            let age = elements[1].value;
-            let gend = elements[2].value;
-            if(elements[2].checked)
-                gend = elements[2].values;
-            let person = new Person(username, age, gend);
-            console.log(person.getInfo());
-
-        });
-
-        
-
-        //event via function call
-        //function clicker(){
-        //    console.log("You have clicked this");
-        //}
-    </script>
 </body>
+<script src="js/my.js"></script>
 </html>
