@@ -5,21 +5,18 @@
     <title>Event-Driven</title>
 </head>
 <body>
-    <form action="form1">
-        <input type="text"  id="iusername" required mainlegth="5" maxlength="10">
-        <input type="number"  id="iusername" value="1" min="1" max="10" required mainlegth="6">
-        <br />
-        <input type="radio" name="gend" id="imale" value="Male">
-        <label for="imale">Male</label>
-        <br />
-        <input type="radio" name="gend" id="ifemale" value="Female">
-        <label for="ifemale">Female</label>
-    </form>
-    <p onclick="clicker()">Sample</p>
-    <h1 onclick="clicker()"onclick="clicker()">Tag</h1>
-    <button id="btnSend">Send</button>
+    <table id="tbldata" style="border: black 1px solid;">
+        <thead style="border: black 1px solid;">
+            <tr>
+                <th>Invalid Input</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    
+
+        </tbody>
+
+    </table>
     
     <script src="js/my.js"></script>
     
@@ -37,6 +34,8 @@
             console.log(person.getInfo());
 
         });
+
+        
 
         //event via function call
         //function clicker(){

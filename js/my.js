@@ -6,3 +6,7 @@ function Person(usern, age, gend){
         return $ name is;
     }
 }
+
+function createCalendar(month, dayOfWeek){
+    const days = [31, 28, 31, ]
+}
