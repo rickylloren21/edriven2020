@@ -6,7 +6,6 @@ function mainForm(){
     tax = Number((percentToGet / 100) * subtotal);
     total =  Number(subtotal) + Number(tax);
     //change = Number(subtotal) - Number(total);
-
     amntPaid = Number(total);
     change = Number(amntPaid-total);
 
