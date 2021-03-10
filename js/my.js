@@ -1,5 +1,5 @@
 function mainForm(){
-    var subtotal, tax, total, amountPaid, change, percentToGet, pay, change;
+    var subtotal, tax, total, amntPaid, change, percentToGet, pay, change;
     pay = document.getElementById("pay")
     percentToGet = 12;
     subtotal = document.getElementById("subtotal").value;
@@ -7,13 +7,13 @@ function mainForm(){
     total =  Number(subtotal) + Number(tax);
     //change = Number(subtotal) - Number(total);
 
-    amountPaid = Number(total);
-    change = Number(amountPaid-total);
+    amntPaid = Number(total);
+    change = Number(amntPaid-total);
 
     if(subtotal > 99){
         document.getElementById("tax").value = tax
         document.getElementById("total").value = total
-        document.getElementById("amountpaid").value = amountPaid
+        document.getElementById("amountpaid").value = amntPaid
         document.getElementById("amountpaid").disabled = false;
         document.getElementById("amountpaid").min = total
         document.getElementById("change").value = change
