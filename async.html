@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JS</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-------   Time Zone    -------
+    <h1 id="timezone"></h1>
+    <h2 id="datetimme"></h2>
+    <script>
+        const timezone = document.getElementById('timezone')
+        const datetimme = document.getElementById('datetimme')
+
+        const request = 'http://worldtimeapi.org/api/timezone/America/Chicago'
+        
+        //--------gamay na code sa pag fetch----------//
+        const getTimeData = async () => {
+            const response = await fetch(request)
+            const data = await response.json()
+            return data
+        }
+        getTimeData()
+            .then((data) => {
+                timezone.innerHTML = data['timezone'];
+                datetimme.innerHTML = data['datetime'];
+            })
+            .catch((err) => console.log(err))
+    </script> -->
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyy"></tbody>
+    </table>
+
+    <script>
+        const tbodyy = document.getElementById('tbodyy')
+
+        const request = 'https://jsonplaceholder.typicode.com/users'
+
+        const getUserData = async () => {
+            const response = await fetch(request)
+            const data = await response.json()
+            return data
+        }
+        getUserData()
+            .then((data) => {
+                console.log(data)
+                for(user of data){
+                    //console.log(user.name)
+                    let newrow = tbodyy.insertRow();
+                    let cell = newrow.insertCell();
+                    cell.innerText = user.id
+                    
+                    cell = newrow.insertCell();
+                    cell.innerText = user.username
+
+                    cell = newrow.insertCell();
+                    cell.innerText = user.name
+
+                    cell = newrow.insertCell();
+                    cell.innerText = user.website
+
+                    cell = newrow.insertCell();
+                    cell.innerText = `${user.address.street}, ${user.address.city}`;
+
+                }
+            })
+            .catch((err) => console.log(err))
+
+    </script>
+
+
+</body>
+</html>
